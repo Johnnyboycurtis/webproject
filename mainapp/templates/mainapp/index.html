@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        body {
+        background: #555;
+        }
+
+        .content {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2>{{ title }}</h2>
+
+            <div class="row justify-content-md-center">
+                <div class="row">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_table }}
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            
+                <div class="row">
+                    <h3>Results</h3>
+                    <br>
+                    <hr>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Quantity</th>
+                        <th>Pub Date</th>
+                        </tr>
+    
+                        {% for post in posts %}
+                        <tr>
+                        <td>{{ post.id }}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.quantity}}</td>
+                        <td>{{post.pub_date}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+                <form action="{% url 'export' %}">
+                    <button type="submit">Export data to Excel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
