@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from mainapp.forms import DataForm
 from mainapp import models
-from .export_helper import export_data
 
 def index(request):
     form = DataForm()
