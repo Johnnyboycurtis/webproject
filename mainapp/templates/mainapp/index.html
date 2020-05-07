@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
     <title>{{ title }}</title>
 
     <style>
@@ -12,20 +17,24 @@
         }
 
         body {
-        background: #555;
+            background: #555;
         }
 
         .content {
-        max-width: 800px;
-        margin: auto;
-        background: white;
-        padding: 10px;
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 10px;
+        }
+
+        .text-center {
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="content">
+        <div class="content text-center">
             <h2>{{ title }}</h2>
 
             <div class="row justify-content-md-center">
@@ -36,16 +45,14 @@
                         <input type="submit" value="Submit">
                     </form>
                 </div>
-            
+                <br>
                 <div class="row">
                     <h3>Results</h3>
-                    <br>
                     <hr>
-                    <br>
                     <table style="width:100%">
                         <tr>
                         <th>ID</th>
-                        <th>Title</th>
+                        <th>Category</th>
                         <th>Quantity</th>
                         <th>Pub Date</th>
                         </tr>
@@ -53,7 +60,7 @@
                         {% for post in posts %}
                         <tr>
                         <td>{{ post.id }}</td>
-                        <td>{{post.title}}</td>
+                        <td>{{post.category }}</td>
                         <td>{{post.quantity}}</td>
                         <td>{{post.pub_date}}</td>
                         </tr>
