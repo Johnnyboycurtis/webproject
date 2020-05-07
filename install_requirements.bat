@@ -1,3 +1,3 @@
 pip install django
-pip install xlwings
+pip install openpyxl
 pip install wfastcgi
