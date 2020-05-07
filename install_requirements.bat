@@ -1,3 +1,4 @@
 pip install django
-pip install openpyxl
+pip install xlwings
 pip install wfastcgi
+pip install ipython
