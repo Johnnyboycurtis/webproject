@@ -1,0 +1,59 @@
+.card-header {
+  height: 200px;
+  background-color:#184e8e;
+  background: linear-gradient(135deg, #172a74, #21a9af);
+}
+
+#download-icon {
+  font-size: 30px;
+  color: black;
+  opacity: 0.4;
+}
+
+#heading-card {
+  margin-top: 40px;
+  font-size: 45px;
+}
+
+.cardheader-text {
+  color: #fff;
+}
+
+.card-text.sub-text-color {
+  color: #8c8c8c;
+}
+
+.card-text:last-child {
+  font-size: 30px;
+  color: #595959;
+}
+
+#cardheader-subtext {
+  font-size: 20px;
+}
+
+.card.cards-shadown {
+  box-shadow: 2px 2px 30px #aaaaaa;
+}
+
+.row.space-rows {
+  margin: 40px;
+}
+
+.col {
+  padding: 20px 7px 0px 7px;
+}
+
+.card.cards-shadown.cards-hover:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  z-index: 99;
+}
+
+.card-header:first-child:hover {
+  background-color: #ffb366;
+}
+

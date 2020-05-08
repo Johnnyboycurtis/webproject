@@ -1,0 +1,182 @@
+#footer,.header-blue{font-family:'Source Sans Pro',sans-serif}.header-blue{background:linear-gradient(135deg,#172a74,#21a9af);background-color:#184e8e;padding-bottom:80px}@media (min-width:768px){.header-blue{padding-bottom:0}}.header-blue .navbar{background:0 0;padding-top:.75rem;padding-bottom:.75rem;color:#fff;border-radius:0;box-shadow:none;border:none}.header-blue .navbar .navbar-brand{font-weight:700;color:inherit}.header-blue .navbar .navbar-brand:hover{color:#f0f0f0}.header-blue .navbar .navbar-collapse{border-top:1px solid rgba(255,255,255,.3);margin-top:.5rem}@media (min-width:768px){.header-blue .navbar{padding-top:1rem;padding-bottom:1rem}.header-blue .navbar .navbar-collapse{border-color:transparent;margin:0}.header-blue .navbar-nav .nav-link{padding-left:.7rem;padding-right:.7rem}}.header-blue .navbar .navbar-collapse span .login{color:#d9d9d9;margin-right:.5rem;text-decoration:none}.header-blue .navbar .navbar-collapse span .login:hover{color:#fff}.header-blue .navbar .navbar-toggler{border-color:rgba(255,255,255,.3)}.header-blue .navbar .navbar-toggler:hover,.header-blue .navbar-toggler:focus{background:0 0}@media (min-width:992px){.header-blue .navbar-nav .nav-link{padding-left:1.2rem;padding-right:1.2rem}}.header-blue .navbar.navbar-light .navbar-nav .nav-link{color:#d9d9d9}.header-blue .navbar.navbar-light .navbar-nav .nav-link:focus,.header-blue .navbar.navbar-light .navbar-nav .nav-link:hover{color:#fcfeff!important;background-color:transparent}.header-blue .navbar .navbar-nav>li>.dropdown-menu{margin-top:-5px;box-shadow:0 4px 8px rgba(0,0,0,.1);background-color:#fff;border-radius:2px}.header-blue .navbar .dropdown-menu .dropdown-item,.header-blue .navbar .dropdown-menu .dropdown-item:focus{line-height:2;color:#37434d}.header-blue .navbar .dropdown-menu .dropdown-item:focus,.header-blue .navbar .dropdown-menu .dropdown-item:hover{background:#ebeff1}.header-blue .action-button,.header-blue .action-button:not(.disabled):active{border:1px solid rgba(255,255,255,.7);border-radius:40px;color:#ebeff1;box-shadow:none;text-shadow:none;padding:.3rem .8rem;background:0 0;transition:background-color .25s;outline:0}.header-blue .action-button:hover{color:#fff}.header-blue .navbar .form-inline label{color:#d9d9d9}.header-blue .navbar .form-inline .search-field{display:inline-block;width:80%;background:0 0;border:none;border-bottom:1px solid transparent;border-radius:0;box-shadow:none;color:inherit;transition:border-bottom-color .3s}.header-blue .navbar .form-inline .search-field:focus{border-bottom:1px solid #ccc}.header-blue .hero{margin-top:20px;text-align:center}@media (min-width:768px){.header-blue .hero{margin-top:60px;text-align:left}}.header-blue .hero h1{color:#fff;font-size:40px;margin-top:0;margin-bottom:15px;font-weight:300;line-height:1.4}@media (min-width:992px){.header-blue .hero h1{margin-top:190px;margin-bottom:24px;line-height:1.2}}.header-blue .hero p{color:rgba(255,255,255,.8);font-size:20px;margin-bottom:30px;font-weight:300}.header-blue .phone-holder{text-align:right}.header-blue div.iphone-mockup{position:relative;max-width:300px;margin:20px;display:inline-block}.header-blue .iphone-mockup img.device{width:100%;height:auto}.header-blue .iphone-mockup .screen{position:absolute;width:88%;height:77%;top:12%;border-radius:2px;left:6%;border:1px solid #444;overflow:hidden;background:url(/assets/img/screen-content-iphone-6.jpg?h=e28e1542c3e36104806ee55549d60f98) center;background-size:cover}.header-blue .iphone-mockup .screen:before{content:'';background-color:#fff;position:absolute;width:70%;height:140%;top:-12%;right:-60%;transform:rotate(-19deg);opacity:.2}#footer{background:linear-gradient(135deg,#172a74,#21a9af);background-color:#184e8e;padding-bottom:80px}
+
+.content-section {
+  background-color:#d2d2d2;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-section {
+  background-color:#e6e6e6;
+  padding: 10px 20px;
+  border: 1px solid #969696;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.lefti{
+  padding: 50px 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+  display: block;
+}
+/*
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: block;
+  background-color: #f1f1f1;
+}
+ul :hover{
+  background-color: #002f62;
+  color: #fafafa;
+}
+
+
+ul li a {
+  padding: 8px 16px;
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  font-family: sans-serif;
+}
+
+li a:hover:not(.active) {
+  color: white;
+}*/
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+.btn-outline-info{
+  float: right;
+  margin-top: 30px;
+  width: 150px;
+  margin-bottom: 100px;
+}
+
+/*.btn-outline-info{color:#17a2b8;border-color:#17a2b8}*/
+
+.btn-outline-primary{
+  color:#17a2b8;
+  border-color:#17a2b8
+}
+.btn-outline-primary:hover{
+  color:#fff;
+  background-color:#17a2b8;
+  border-color:#17a2b8
+}
+
+.pagenum {
+  color:#17a2b8;
+  border-color:#17a2b8
+}
+
+.pagenum:hover {
+  color:#fff;
+  background-color:#17a2b8;
+  border-color:#17a2b8
+}
+
+.currpage {
+  color:#fff;
+  background-color:#17a2b8;
+  border-color:#17a2b8
+}
+
+label , .lable{
+  color: cadetblue;
+}
+
+#smal{
+  font-size:20px ;
+  color: #428bca;
+}
+footer{
+  background-color: #002f62;
+  text-align: center;
+  color: #fafafa;
+}
+/*footer p{
+  margin-bottom: 0;
+}*/
+.btn-info {
+  width: 130px;
+  margin-top: 30px;
+}
+
+.form-check-input{
+  width: 25px;
+  height: 25px;
+}
+.form-check-label{
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.col-md-8{
+  -ms-flex:0 0 66.666667%;
+  flex:0 0 66.666667%;
+  max-width: 76.666667%
+}
+.bg-light{
+  background:transparent !important;
+}
+.card .text-center: hover{
+  -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+  box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+}
+.a
+{
+color: #fff;
+text-decoration: none;
+text-transform: uppercase;
+background: linear-gradient(90deg,#0162c8,#55e7fc);
+}
+.form-control{
+margin: 0 auto;
+}
