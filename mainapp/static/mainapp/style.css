@@ -1,0 +1,19 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+body {
+    background: #555;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
