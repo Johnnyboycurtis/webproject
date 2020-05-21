@@ -1,0 +1,21 @@
+# Settings to add to C:/Apache24/conf/httpd.conf
+# update as needed
+
+
+# Django Project
+LoadFile "c:/python37/python37.dll"
+LoadModule wsgi_module "c:/python37/lib/site-packages/mod_wsgi/server/mod_wsgi.cp37-win_amd64.pyd"
+WSGIPythonHome "c:/python37"
+WSGIScriptAlias / "C:/Users/navar/Desktop/webproject/webproject/wsgi.py"
+WSGIPythonPath "C:/Users/navar/Desktop/webproject/"
+
+<Directory "C:/Users/navar/Desktop/webproject/webproject/">
+    <Files wsgi.py>
+        Require all granted
+    </Files>
+</Directory>
+
+Alias /static "C:/Users/navar/Desktop/webproject/static/"
+<Directory "C:/Users/navar/Desktop/webproject/static/">
+    Require all granted
+</Directory>
