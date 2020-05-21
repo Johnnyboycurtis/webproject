@@ -8,6 +8,7 @@
 #
 # If your host doesn't have a registered DNS name, enter its IP address here.
 #
+# ServerName localhost:80 # use this if you're running this on a VirtualBox VM or PC
 ServerName <IP Address>:80
 
 
