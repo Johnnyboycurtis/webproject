@@ -1,6 +1,15 @@
 # Settings to add to C:/Apache24/conf/httpd.conf
 # update as needed
 
+#
+# ServerName gives the name and port that the server uses to identify itself.
+# This can often be determined automatically, but we recommend you specify
+# it explicitly to prevent problems during startup.
+#
+# If your host doesn't have a registered DNS name, enter its IP address here.
+#
+ServerName <IP Address>:80
+
 
 # Django Project
 LoadFile "c:/python37/python37.dll"
