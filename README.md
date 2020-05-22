@@ -5,6 +5,8 @@ This is a basic web app to illustrate deployment on Microsoft IIS or Apache + mo
 
 ##  Microsoft IIS
 
+- YouTube: [Deploy Django on Windows using Microsoft IIS](https://youtu.be/APCQ15YqqQ0)
+
 ### References:
 
 - [Configure Python web apps for IIS](https://docs.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2019)
@@ -28,11 +30,11 @@ For Microsoft IIS please use the `webproject/web-config-template` and the `webpr
 
 4. Navigate to `C:/`, right-click on `Python37`, and edit `Properties`. Under Security, add `IIS AppPool\DefaultAppPool`. `DefaultAppPool` is the default app pool.
 
-5. Enable wfast-cgi
+5. Enable wfastcgi
 
-    - Open a CMD terminal as Administrator, and run the command `wfast-cgi enable`. 
+    - Open a CMD terminal as Administrator, and run the command `wfastcgi-enable`. 
     
-    - Copy the Python path, and replace the `scriptProcessor="<to be filled in>"` in web-config-template with the Python path returned by `wfast-cgi`.
+    - Copy the Python path, and replace the `scriptProcessor="<to be filled in>"` in web-config-template with the Python path returned by `wfastcgi-enable`.
 
 6. Edit the remaining settings in `web-config-template` then save it as `web.config` in the `C:/inetpub/wwwroot/` directory. It should NOT sit inside `webproject/`. Other settings can be modified if `webproject` does NOT sit at `C:/inetpub/wwwroot/`
 
@@ -42,7 +44,7 @@ For Microsoft IIS please use the `webproject/web-config-template` and the `webpr
 
     - Edit `DJANGO_SETTINGS_MODULE` (your `settings.py` module)
 
-7. Open Internet Information Services (IIS) Manager. Under connections select the server, then in the center pane under Management select Configuration Editor. Under Section select system.webServer/handlers. Under Section select Unlock Section. This is required because the `C:/inetpub/wwwroot/web.config` creates [handlers](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/handlers/) for our project.
+7. Open Internet Information Services (IIS) Manager. Under connections select the server, then in the center pane under Management select Configuration Editor. Under Section select system.webServer/handlers. Under Section select Unlock Section. This is required because the `C:/inetpub/wwwroot/web.config` creates a [route handler](https://pypi.org/project/wfastcgi/#route-handlers) for our project.
 
 
 8. Add Virtual Directory. In order to enable serving static files map a static alias to the static directory, `C:/inetpub/wwwroot/webproject/static/`
@@ -51,6 +53,8 @@ For Microsoft IIS please use the `webproject/web-config-template` and the `webpr
 
 
 ## Apache and mod_wsgi
+
+- YouTube: [Deploy Django with Apache and mod_wsgi on Windows Server 2019](https://www.youtube.com/watch?v=frEjX1DNSpc)
 
 ### References:
 
