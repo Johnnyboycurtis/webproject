@@ -11,10 +11,43 @@ This is a basic web app to illustrate deployment on Microsoft IIS or Apache + mo
 
 - [WFastCGI](https://pypi.org/project/wfastcgi/)
 
-For Microsoft IIS please use the webproject/web-config-template and the webproject/static/web.config files. Update them as needed.
+For Microsoft IIS please use the `webproject/web-config-template` and the `webproject/static/web.config` files. Update the `web-config-template` as needed. It will be used to create a `web.config` that sits on `C:/inetpub/wwwroot/web.config`; The directory will contain all project files: `C:/inetpub/wwwroot/web.config` along with `C:/inetpub/wwwroot/webproject`.
 
 
+### Steps
 
+1. Install IIS on your VM or machine, and enable CGI
+
+    - [How to Install IIS on Windows 8 or Windows 10](https://www.howtogeek.com/112455/how-to-install-iis-8-on-windows-8/)
+
+    - [CGI](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/cgi)
+
+2. Copy `webproject` to `C:/inetpub/wwwroot/webproject`
+
+3. Install Python 3.7 in `C:/Python37`, and install the necessary libraries `django`, `openpyxl`, `wfastcgi`; see `webproject/install_requirements.bat`
+
+4. Navigate to `C:/`, right-click on `Python37`, and edit `Properties`. Under Security, add `IIS AppPool\DefaultAppPool`. `DefaultAppPool` is the default app pool.
+
+5. Enable wfast-cgi
+
+    - Open a CMD terminal as Administrator, and run the command `wfast-cgi enable`. 
+    
+    - Copy the Python path, and replace the `scriptProcessor="<to be filled in>"` in web-config-template with the Python path returned by `wfast-cgi`.
+
+6. Edit the remaining settings in `web-config-template` then save it as `web.config` in the `C:/inetpub/wwwroot/` directory. It should NOT sit inside `webproject/`. Other settings can be modified if `webproject` does NOT sit at `C:/inetpub/wwwroot/`
+
+    - Edit project `PYTHONPATH` (path to your project)
+
+    - Edit `WSGI_HANDLER` (located in your `wsgi.py`)
+
+    - Edit `DJANGO_SETTINGS_MODULE` (your `settings.py` module)
+
+7. Open Internet Information Services (IIS) Manager. Under connections select the server, then in the center pane under Management select Configuration Editor. Under Section select system.webServer/handlers. Under Section select Unlock Section. This is required because the `C:/inetpub/wwwroot/web.config` creates [handlers](https://docs.microsoft.com/en-us/iis/configuration/system.webserver/handlers/) for our project.
+
+
+8. Add Virtual Directory. In order to enable serving static files map a static alias to the static directory, `C:/inetpub/wwwroot/webproject/static/`
+
+9. Refresh the server and navigate to `localhost`
 
 
 ## Apache and mod_wsgi
