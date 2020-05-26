@@ -97,6 +97,8 @@ For Microsoft IIS please use the `webproject/web-config-template` and the `webpr
 
 ## nginx and Waitress
 
+- Watch on YouTube: [Deploy Django with NGINX and Waitress on Windows Server 2019](https://youtu.be/BBKq6H9Rm5g)
+
 ### Steps
 
 1. Download and copy nginx to `C:/`.
