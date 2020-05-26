@@ -8,7 +8,7 @@ This is a basic web app to illustrate deployment on Microsoft IIS, Apache + mod_
 
 - [Apache + mod_wsgi](#apache-and-mod_wsgi)
 
-- [nginx + Waitress](#hginx--waitress)
+- [nginx + Waitress](#nginx-and-waitress)
 
 
 ##  Microsoft IIS
@@ -95,7 +95,7 @@ For Microsoft IIS please use the `webproject/web-config-template` and the `webpr
 
 
 
-## nginx + Waitress
+## nginx and Waitress
 
 ### Steps
 
