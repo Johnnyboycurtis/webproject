@@ -1,20 +1,19 @@
 # webproject
 
-This is a basic web app to illustrate deployment on Microsoft IIS or Apache + mod_wsgi
+This is a basic web app to illustrate deployment on Microsoft IIS, Apache + mod_wsgi, or nginx
+
+# Table of Contents
+
+- [Microsoft IIS](#heading)
+
+- [Apache + mod_wsgi](#heading-1)
+
+- [nginx + Waitress](#heading-2)
 
 
 ##  Microsoft IIS
 
-- YouTube: [Deploy Django on Windows using Microsoft IIS](https://youtu.be/APCQ15YqqQ0)
-
-### References:
-
-- [Configure Python web apps for IIS](https://docs.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2019)
-
-- [WFastCGI](https://pypi.org/project/wfastcgi/)
-
-For Microsoft IIS please use the `webproject/web-config-template` and the `webproject/static/web.config` files. Update the `web-config-template` as needed. It will be used to create a `web.config` that sits on `C:/inetpub/wwwroot/web.config`; The directory will contain all project files: `C:/inetpub/wwwroot/web.config` along with `C:/inetpub/wwwroot/webproject`.
-
+- Watch on YouTube: [Deploy Django on Windows using Microsoft IIS](https://youtu.be/APCQ15YqqQ0)
 
 ### Steps
 
@@ -52,9 +51,10 @@ For Microsoft IIS please use the `webproject/web-config-template` and the `webpr
 9. Refresh the server and navigate to `localhost`
 
 
+
 ## Apache and mod_wsgi
 
-- YouTube: [Deploy Django with Apache and mod_wsgi on Windows Server 2019](https://www.youtube.com/watch?v=frEjX1DNSpc)
+- Watch on YouTube: [Deploy Django with Apache and mod_wsgi on Windows Server 2019](https://www.youtube.com/watch?v=frEjX1DNSpc)
 
 ### References:
 
@@ -82,3 +82,53 @@ For Apache 2.4 and mod_wsgi use the httpd.conf.template
 5. On a CMD terminal, run `mod_wsgi-express module-config`, then copy the contents and edit  `webproject/httpd.conf.template`. Edit paths to Python and your Django project.
 
 6. On a CMD terminal, run `C:/Apache24/bin/httpd.exe -k start`, open a web browser and navigate to `localhost` (make sure `ALLOWED_HOSTS` has been updated).
+
+
+
+### References:
+
+- [Configure Python web apps for IIS](https://docs.microsoft.com/en-us/visualstudio/python/configure-web-apps-for-iis-windows?view=vs-2019)
+
+- [WFastCGI](https://pypi.org/project/wfastcgi/)
+
+For Microsoft IIS please use the `webproject/web-config-template` and the `webproject/static/web.config` files. Update the `web-config-template` as needed. It will be used to create a `web.config` that sits on `C:/inetpub/wwwroot/web.config`; The directory will contain all project files: `C:/inetpub/wwwroot/web.config` along with `C:/inetpub/wwwroot/webproject`.
+
+
+
+## nginx + Waitress
+
+### Steps
+
+1. Download and copy nginx to `C:/`.
+
+2. Install Python 3.7 in `C:/Python37` and install 
+
+    - `django`, `openpyxl` and [`waitress`](https://docs.pylonsproject.org/projects/waitress/en/stable/)
+
+3. Edit `ALLOWED_HOSTS` in `settings.py`. Waitress will be running the Django server at `http://localhost:8080`.
+
+4. Collect static files by running `python manage.py collectstatic`
+
+5. Edit `nginx_waitress/webproeject_nginx.conf`
+
+    - Edit the `server_name`
+
+    - Edit the path to `/static` (and `/media` if needed)
+    
+    - Edit `proxy_pass` to match the server running from Waitress (i.e. `runserver.py`). This will usually be `localhost` or your IP address
+
+6. Create two directories inside of `C:/nginx/`
+
+    - Create `sites-enabled` and `sites-available`
+
+    - Copy `webproject_nginx.conf` to the two directories
+
+6. Edit `C:/nginx/conf/nginx.conf`
+
+    - Add `include <path to your sites-enabled/webproject_nginx.conf>;`
+
+    - Change port `80` to a non-essential port like `10`. We will need to utilize `80` for our Django project
+
+7. Open a terminal at `C:/nginx/` and run `nginx.exe -t` to check files, and if everything is successful run `nginx.exe` to start the server
+
+8. Open a web browser and navigate to `http://localhost`
