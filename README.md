@@ -4,11 +4,11 @@ This is a basic web app to illustrate deployment on Microsoft IIS, Apache + mod_
 
 # Table of Contents
 
-- [Microsoft IIS](#heading)
+- [Microsoft IIS](#microsoft-iis)
 
-- [Apache + mod_wsgi](#heading-1)
+- [Apache + mod_wsgi](#apache-and-mod_wsgi)
 
-- [nginx + Waitress](#heading-2)
+- [nginx + Waitress](#hginx--waitress)
 
 
 ##  Microsoft IIS
